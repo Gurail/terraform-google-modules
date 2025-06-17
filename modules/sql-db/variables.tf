@@ -1,3 +1,4 @@
+
 variable "instance_name" {
   description = "The name of the Cloud SQL instance"
   type        = string
@@ -21,3 +22,8 @@ variable "machine_type" {
   default     = "db-f1-micro"
 }
 
+variable "root_password" {
+  description = "The machine type to use"
+  type        = string
+  default     = null
+}

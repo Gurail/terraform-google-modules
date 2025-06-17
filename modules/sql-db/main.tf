@@ -2,7 +2,7 @@ resource "google_sql_database_instance" "this" {
   name             = var.instance_name
   database_version = var.database_version
   region           = var.region
-
+  root_password    = var.root_password
   settings {
     # Second-generation instance tiers are based on the machine
     # type. See argument reference below.
