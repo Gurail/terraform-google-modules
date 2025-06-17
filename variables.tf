@@ -6,6 +6,7 @@ variable "project_id" {
 variable "instance_name" {
   description = "The name of the Cloud SQL instance"
   type        = string
+  default     = "main-instance"
 }
 
 variable "database_version" {
@@ -26,3 +27,18 @@ variable "machine_type" {
   default     = "db-f1-micro"
 }
 
+variable "database_name" {
+  description = "The name of the database to create"
+  type        = string
+}
+
+variable "user_name" {
+  description = "The name of the user to create"
+  type        = string
+}
+
+variable "user_password" {
+  description = "The password for the user"
+  type        = string
+  sensitive   = true
+} 
