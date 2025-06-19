@@ -1,4 +1,4 @@
-resource "google_container_cluster" "primary" {
+resource "google_container_cluster" "this" {
   name     = var.cluster_name
   location = var.region
 
@@ -65,8 +65,8 @@ resource "google_container_cluster" "primary" {
   }
 }
 
-resource "google_container_node_pool" "primary_nodes" {
-  name       = "${var.cluster_name}-node-pool"
+resource "google_container_node_pool" "default_nodepool" {
+  name       = "default-pool"
   location   = var.region
   cluster    = google_container_cluster.primary.name
   node_count = var.node_count
