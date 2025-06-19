@@ -37,11 +37,11 @@ output "node_pool_instance_group_urls" {
 
 output "kubeconfig_raw" {
   description = "Raw kubeconfig for the GKE cluster"
-  value = templatefile("${path.module}/kubeconfig-template.yaml", {
+  value = {
     cluster_name           = google_container_cluster.primary.name
     endpoint              = google_container_cluster.primary.endpoint
     cluster_ca_certificate = google_container_cluster.primary.master_auth.0.cluster_ca_certificate
-  })
+  }
   sensitive = true
 }
 
